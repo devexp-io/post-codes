@@ -1,0 +1,32 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "incremental": true,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es6",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}
