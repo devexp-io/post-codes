@@ -1,23 +1,4 @@
-declare global {
-  interface Array<T> {
-    removeLast(): T;
 
-    empty(): boolean;
-
-    contains(e: T): boolean;
-
-    findBy(e: Partial<T>): T[];
-
-    filterBy(e: Partial<T>): T[];
-
-    sortBy(e: Partial<{ [k in keyof T]: 'asc' | 'desc' }>): T[];
-
-    ifFound(action: (first: T) => void): T[];
-
-    ifEmpty(action: () => void): T[];
-
-  }
-}
 
 interface ArrayExtended<T> {
   removeLast(): T;
@@ -37,7 +18,7 @@ interface ArrayExtended<T> {
   ifEmpty(action: () => void): T[];
 }
 
-export function extendArray<T>(target:Array<T> = Array.prototype):Array<T> & ArrayExtended<T> {
+export function extendArray<T>(target:any = Array.prototype):Array<T> & ArrayExtended<T> {
 
   // prevent custom methods to be listed in the for.. in statement
   let methods = ['removeLast', 'empty', 'contains', 'findBy', 'filterBy', 'sortBy', 'ifFound', 'ifEmpty'];
@@ -139,4 +120,25 @@ function isString(s) {
 
 export {};
 
+/* uncomment if using Array.prototype
+declare global {
+  interface Array<T> {
+    removeLast(): T;
 
+    empty(): boolean;
+
+    contains(e: T): boolean;
+
+    findBy(e: Partial<T>): T[];
+
+    filterBy(e: Partial<T>): T[];
+
+    sortBy(e: Partial<{ [k in keyof T]: 'asc' | 'desc' }>): T[];
+
+    ifFound(action: (first: T) => void): T[];
+
+    ifEmpty(action: () => void): T[];
+
+  }
+}
+*/
